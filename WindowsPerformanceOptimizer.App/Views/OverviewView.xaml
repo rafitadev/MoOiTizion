@@ -1,0 +1,16 @@
+<UserControl x:Class="WindowsPerformanceOptimizer.App.Views.OverviewView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Margin="24">
+        <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/></Grid.RowDefinitions>
+        <TextBlock Text="System Overview" Foreground="{StaticResource TextBrush}" FontSize="28" FontWeight="Bold"/>
+        <TextBlock Grid.Row="1" Text="{Binding SystemStatus}" Foreground="{StaticResource MutedTextBrush}" Margin="0,6,0,0"/>
+        <UniformGrid Grid.Row="2" Margin="0,20,0,0" Columns="3">
+            <Border Margin="6" Padding="18" Background="{StaticResource BackgroundBrush}"><StackPanel><TextBlock Text="CPU"/><ProgressBar Value="{Binding Cpu}" Maximum="100"/><TextBlock Text="{Binding Cpu, StringFormat={}{0:F0}%}"/></StackPanel></Border>
+            <Border Margin="6" Padding="18" Background="{StaticResource BackgroundBrush}"><StackPanel><TextBlock Text="RAM"/><ProgressBar Value="{Binding Ram}" Maximum="100"/><TextBlock Text="{Binding Ram, StringFormat={}{0:F0}%}"/></StackPanel></Border>
+            <Border Margin="6" Padding="18" Background="{StaticResource BackgroundBrush}"><StackPanel><TextBlock Text="Disk"/><ProgressBar Value="{Binding Disk}" Maximum="100"/><TextBlock Text="{Binding Disk, StringFormat={}{0:F0}%}"/></StackPanel></Border>
+            <Border Margin="6" Padding="18" Background="{StaticResource BackgroundBrush}"><StackPanel><TextBlock Text="GPU"/><ProgressBar Value="{Binding Gpu}" Maximum="100"/><TextBlock Text="{Binding Gpu, StringFormat={}{0:F0}%}"/></StackPanel></Border>
+            <Border Margin="6" Padding="18" Background="{StaticResource BackgroundBrush}"><StackPanel><TextBlock Text="Temperature"/><ProgressBar Value="{Binding Temp}" Maximum="100"/><TextBlock Text="{Binding Temp, StringFormat={}{0:F0}°C}"/></StackPanel></Border>
+        </UniformGrid>
+    </Grid>
+</UserControl>

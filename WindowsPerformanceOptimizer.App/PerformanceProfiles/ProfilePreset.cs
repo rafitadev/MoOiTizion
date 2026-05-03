@@ -1,0 +1,2 @@
+namespace WindowsPerformanceOptimizer.App.PerformanceProfiles;
+public enum ProfilePreset{Balanced,Performance,MaximumPerformance,Gaming,Custom,Benchmark,Economy}

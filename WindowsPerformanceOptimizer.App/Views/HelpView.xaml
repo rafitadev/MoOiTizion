@@ -1,0 +1,8 @@
+<UserControl x:Class="WindowsPerformanceOptimizer.App.Views.HelpView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel Margin="24">
+        <TextBlock Text="Help & Safety" FontSize="28" FontWeight="Bold"/>
+        <TextBlock Margin="0,16,0,0" TextWrapping="Wrap" Text="Every tweak should create restore data before changes. Warn users when admin rights are required or when stability can be affected."/>
+    </StackPanel>
+</UserControl>

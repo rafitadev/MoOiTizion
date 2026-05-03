@@ -1,0 +1,8 @@
+<UserControl x:Class="WindowsPerformanceOptimizer.App.Views.AdvancedView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel Margin="24">
+        <TextBlock Text="Advanced Settings" FontSize="28" FontWeight="Bold"/>
+        <TextBlock Margin="0,16,0,0" Text="Future modules: startup optimization, service tuning, process priority, latency and scheduler controls." TextWrapping="Wrap"/>
+    </StackPanel>
+</UserControl>
