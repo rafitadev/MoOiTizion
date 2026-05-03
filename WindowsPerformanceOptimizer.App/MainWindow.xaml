@@ -1,0 +1,29 @@
+<Window x:Class="WindowsPerformanceOptimizer.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:WindowsPerformanceOptimizer.App.Views"
+        mc:Ignorable="d"
+        Title="Windows Performance Optimizer" Height="760" Width="1260" MinWidth="980" MinHeight="640">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Background="#111827" Padding="20">
+            <StackPanel>
+                <TextBlock Text="Windows Performance Optimizer" Foreground="White" FontSize="20" FontWeight="SemiBold" TextWrapping="Wrap" Margin="0,0,0,30"/>
+                <Button Content="Overview" Command="{Binding NavigateCommand}" CommandParameter="Overview" Margin="0,0,0,12" Height="40"/>
+                <Button Content="Monitoring" Command="{Binding NavigateCommand}" CommandParameter="Monitoring" Margin="0,0,0,12" Height="40"/>
+                <Button Content="Performance Profiles" Command="{Binding NavigateCommand}" CommandParameter="Profiles" Margin="0,0,0,12" Height="40"/>
+                <Button Content="Advanced" Command="{Binding NavigateCommand}" CommandParameter="Advanced" Margin="0,0,0,12" Height="40"/>
+                <Button Content="Logs & History" Command="{Binding NavigateCommand}" CommandParameter="Logs" Margin="0,0,0,12" Height="40"/>
+                <Button Content="Help" Command="{Binding NavigateCommand}" CommandParameter="Help" Height="40"/>
+            </StackPanel>
+        </Border>
+
+        <ContentControl Grid.Column="1" Content="{Binding CurrentView}"/>
+    </Grid>
+</Window>
