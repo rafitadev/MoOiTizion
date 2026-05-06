@@ -1,1 +1,34 @@
-<UserControl x:Class="WindowsPerformanceOptimizer.App.Views.RecommendationsView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"><Grid Margin="20"><TextBlock Text="Recommendations" FontSize="24"/></Grid></UserControl>
+<UserControl x:Class="WindowsPerformanceOptimizer.App.Views.RecommendationsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="12" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="{Binding Title}" FontSize="24" FontWeight="Bold" />
+
+        <ListBox Grid.Row="2" ItemsSource="{Binding Items}" BorderThickness="0" Background="Transparent">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border Margin="0,0,0,10" Padding="12" CornerRadius="8" Background="#1A1A1A">
+                        <StackPanel>
+                            <TextBlock Text="{Binding Title}" FontSize="16" FontWeight="SemiBold" Foreground="White" />
+                            <TextBlock Text="{Binding Description}" Margin="0,4,0,0" TextWrapping="Wrap" Foreground="#DDDDDD" />
+                            <TextBlock Text="{Binding ActionHint}" Margin="0,6,0,0" FontStyle="Italic" Foreground="#A5D6A7" />
+                            <DockPanel Margin="0,8,0,0">
+                                <TextBlock Text="{Binding Category}" Foreground="#90CAF9" />
+                                <TextBlock Text="{Binding Priority, StringFormat=Priority: {0}}" Foreground="#FFCC80" HorizontalAlignment="Right" />
+                            </DockPanel>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>
